@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap');
+
+:root {
+    font-size: 62.5%;
+    --font1: 'Inter', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font1);
+    background-color: rgb(18,18,18);
+    font-size: 1.6rem;
+    overflow: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.appBody {
+    /* outline: 1px solid white; */
+    margin: 15px auto;
+    width: 1050px;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topSection {
+    /* outline: 1px solid white; */
+    font-weight: 700;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo{
+    /* outline: 1px solid rgb(255, 55, 55); */
+    height: 100%;
+}
+
+.logo >img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* mix-blend-mode: color-dodge; */
+}
+
+.linksContainer {
+    /* outline: 1px solid rgb(255, 67, 255); */
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    text-transform: capitalize;
+}
+
+.linksContainer a {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 4px solid white;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: white;
+}
+
+.navButtons {
+    /* outline: 1px solid lime; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.navButtons >button {
+    text-transform: capitalize;
+    padding: 1em 1.5em;
+    border: none;
+    font-family: inherit;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.navButtons >button:hover {
+    color: rgb(27, 27, 27);
+    background-color: transparent;
+}
+
+.upload {
+    background-color: dodgerblue;
+    position: relative;
+}
+
+.btnAnim::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: white;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+
+.btnAnim:hover::before {
+    width: 100%;
+}
+
+.create {
+    background-color: rgb(133, 42, 175);
+    position: relative;
+}
+
+.profile {
+    /* outline: 1px solid rgb(232, 255, 99); */
+    display: flex;
+    color: white;
+    background-color: rgb(56, 56, 56);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.profile >img {
+    width: 40px;
+    object-fit: contain;
+}
+
+.profile >.userName {
+    font-size: 1.4rem;
+    width: 80%;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomSection {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.bottomSection >form {
+    width: 100%;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+form >input {
+    font-size: 1.8rem;
+    flex-grow: 1;
+    padding: 7px 10px;
+    outline: none;
+    border: none;
+}
+
+.searchIcon {
+    padding: 0.5em;
+    width: 42px;
+    background-color: rgb(110, 197, 255);
+}
+
+.searchIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.heroSection {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.heroSection >img {
+    width: 100%;
+}
+
+.resultsSection {
+    margin-top: 30px;
+    display: none;
+}
+
+.searchResults {
+    margin-top: 15px;
+    display: flex;
+    gap: 0.7rem;
+    overflow-x: scroll;  
+}
+
+.searchResults::-webkit-scrollbar {
+    display: none;
+}
+
+.searchResults >img {
+    width: 140px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.trendingSection {
+    margin-top: 40px;
+}
+
+.heading {
+    font-size: 2.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.trendingGifs {
+    margin-top: 15px;
+    display: flex;
+    gap: 0.7rem;
+    overflow-x: scroll;    
+}
+
+.trendingGifs::-webkit-scrollbar {
+    display: none;
+}
+
+.trendingGifs > img {
+    width: 140px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.artistSection {
+    margin-top: 40px;
+}
+
+.thumbnails {
+    margin-top: 15px;
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+}
+
+.thumbnails >img {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.thumbnails::-webkit-scrollbar {
+    display: none;
+}
+
+.clipsSection {
+    margin-top: 40px;
+}
+
+.clips {
+    width: 100%;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.clips >img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4/2;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.span2 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.span1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.footer {
+    height: 250px;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/backdrop3.gif');
+    background-size: cover;
+    z-index: -1;
+}
+
+.footer >h3 {
+    padding: 12px 7px;
+    font-weight: 500;
+    letter-spacing: 0.5ch;
+    outline: 3px dashed white;
+}
+
+.footer >h3 >a {
+    padding: 5px 10px;
+    letter-spacing: 0.1ch;
+    background-color: white;
+    color:rgb(27, 27, 27);
+    text-decoration: none;
+    position: relative;
+}
